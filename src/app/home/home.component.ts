@@ -26,6 +26,16 @@ export class HomeComponent implements OnInit {
   }
 
   changeUserName() {
-    this.user.firstName = 'Bob'
+    this.user = {
+      firstName: 'Bob',
+      lastName: 'Smith',
+    };
+  }
+
+  reset() {
+    this.user = {
+      firstName: 'Alice',
+      lastName: 'Smith',
+    };
   }
 }
