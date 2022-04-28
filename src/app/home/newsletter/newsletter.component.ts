@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/interfaces/user';
 
@@ -9,7 +10,7 @@ import { User } from 'src/app/interfaces/user';
 })
 export class NewsletterComponent implements OnInit {
 
-  @Input() user: User;
+  @Input() user$: Observable<User>;
 
   @Output() subscribe = new EventEmitter();
 

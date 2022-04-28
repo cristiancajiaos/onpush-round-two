@@ -1,4 +1,6 @@
-<app-newsletter [user]="user" (subscribe)="changeUserName()">
+<app-newsletter
+  [user$]="userService.user$"
+  (subscribe)="changeUserName()">
 </app-newsletter>
 
 <button (click)="changeUserName()">

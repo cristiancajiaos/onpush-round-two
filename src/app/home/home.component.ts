@@ -1,3 +1,4 @@
+import { UserService } from './../services/user.service';
 import { NewsletterService } from './newsletter/newsletter.service';
 import { User } from './../interfaces/user';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
   };
 
   constructor(
-    private newsletterService: NewsletterService
+    private newsletterService: NewsletterService,
+    public userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -26,16 +28,10 @@ export class HomeComponent implements OnInit {
   }
 
   changeUserName() {
-    this.user = {
-      firstName: 'Bob',
-      lastName: 'Smith',
-    };
+    this.userService.loadUser({firstName: 'Bob', lastName: 'Smith'});
   }
 
   reset() {
-    this.user = {
-      firstName: 'Alice',
-      lastName: 'Smith',
-    };
+    this.userService.loadUser({firstName: 'Alice', lastName: 'Smith' });
   }
 }
