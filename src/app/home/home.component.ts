@@ -1,5 +1,5 @@
 import { UserService } from './../services/user.service';
-import { NewsletterService } from './newsletter/newsletter.service';
+import { NewsletterService } from './foo/bar/baz/newsletter/newsletter.service';
 import { User } from './../interfaces/user';
 import { Component, OnInit } from '@angular/core';
 
